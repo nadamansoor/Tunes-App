@@ -4,6 +4,16 @@ import 'package:tunes_app/widgets/tuneItem.dart';
 class TuneView extends StatelessWidget {
   const TuneView({super.key});
 
+  final List<Color> tuneColors =const[
+    Colors.red,
+    Colors.deepOrange,
+    Colors.yellow,
+    Colors.green,
+    Colors.blueGrey,
+    Colors.blue,
+    Colors.deepPurple,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -15,31 +25,18 @@ class TuneView extends StatelessWidget {
       ),
 
       body: Column(
-        children: [
-          TuneItem(
-            color: Colors.red,
-          ),
-          TuneItem(
-            color: Colors.deepOrange,
-          ),   
-          TuneItem(
-            color: Colors.yellow,
-          ),
-          TuneItem(
-            color: Colors.green,
-          ),
-          TuneItem(
-            color: Colors.blueGrey,
-          ), 
-          TuneItem(
-            color: Colors.blue,
-          ),
-          TuneItem(
-            color: Colors.deepPurple,
-          ),      
-        ],
+        children: getTuneItem(),
       ),
     
     );
+  }
+
+
+List <TuneItem> getTuneItem (){
+  List <TuneItem> items =[];
+    for(var color in tuneColors){
+      items.add(TuneItem(color: color));
+    }
+    return items;
   }
 }

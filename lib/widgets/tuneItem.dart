@@ -9,7 +9,6 @@ class TuneItem extends StatelessWidget {
     return Expanded(
       child: Container(
         color: color,
-        height: MediaQuery.of(context).size.height * 0.3,
       ),
     );
   }
